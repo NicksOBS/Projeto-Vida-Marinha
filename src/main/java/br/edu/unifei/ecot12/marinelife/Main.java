@@ -1,4 +1,4 @@
-package br.edu.unifei.ecot12.vidamarinha;
+package br.edu.unifei.ecot12.marinelife;
 
 public class Main {
     public static void main(String[] args) {
