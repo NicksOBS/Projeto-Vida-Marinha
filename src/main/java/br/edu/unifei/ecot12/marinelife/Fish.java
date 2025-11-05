@@ -1,11 +1,20 @@
 package br.edu.unifei.ecot12.marinelife;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Fish extends Herbivore{
     private float swimmingSpeed;
-    private List<Fish> school = new ArrayList<Fish>();
+    private Fish breedingPartner;
+
+    public Fish breed(Fish breedingPartner){
+        if(breedingPartner.isGender() != this.isGender()){
+            getEnvironment().setOxygenLevel(getEnvironment().getOxygenLevel() - 0.05);
+            System.out.println("THE BREED WAS A SUCCESS");
+            return new Fish();
+        }
+        else{
+            System.out.println("THE BREED FAILED");
+            return null;
+        }
+    }
 
     public void swim(){
         this.getEnvironment().setOxygenLevel(this.getEnvironment().getOxygenLevel()-0.005); //decreases the oxygen level of the environment
@@ -19,12 +28,12 @@ public class Fish extends Herbivore{
         this.swimmingSpeed = swimmingSpeed;
     }
 
-    public List<Fish> getSchool() {
-        return school;
+    public Fish getBreedingPartner() {
+        return breedingPartner;
     }
 
-    public void setSchool(List<Fish> school) {
-        this.school = school;
+    public void setBreedingPartner(Fish breedingPartner) {
+        this.breedingPartner = breedingPartner;
     }
-    
+
 }
