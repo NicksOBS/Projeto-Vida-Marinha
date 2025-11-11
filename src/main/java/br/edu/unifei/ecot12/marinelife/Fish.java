@@ -3,12 +3,23 @@ package br.edu.unifei.ecot12.marinelife;
 public class Fish extends Herbivore{
     private float swimmingSpeed;
     private Fish breedingPartner;
+    private float weight;
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
 
     public Fish breed(Fish breedingPartner){
         if(breedingPartner.isGender() != this.isGender()){
             getEnvironment().setOxygenLevel(getEnvironment().getOxygenLevel() - 0.05);
             System.out.println("THE BREED WAS A SUCCESS");
-            return new Fish();
+            Fish fish = new Fish();
+            getEnvironment().getOrganisms().add(fish);
+            return fish;
         }
         else{
             System.out.println("THE BREED FAILED");
