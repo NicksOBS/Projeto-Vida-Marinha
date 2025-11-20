@@ -4,9 +4,30 @@ public abstract class Herbivore extends MarineAnimal {
     private int amountOfAlgaeConsumed;
     private Seaweed food;
     private String defenseType;
+    private Coral residence;
+
+    public void changeResidence(Coral c){
+    if(residence == c)
+        System.out.println("SAME RESIDENCE");
+    else if(c.getQuantityOrganisms() >= c.getMaxCapacity()){
+        setResidence(c);
+        c.getResidents().add(this);
+        System.out.println("RESIDENCE CHANGED");
+    }
+    System.out.println("MAX CAPACITY ACHIEVED");
+    }
+
 
     public Seaweed getFood() {
         return food;
+    }
+
+    public Coral getResidence() {
+        return residence;
+    }
+
+    public void setResidence(Coral residence) {
+        this.residence = residence;
     }
 
     public void setFood(Seaweed food) {

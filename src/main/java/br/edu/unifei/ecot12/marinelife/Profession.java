@@ -1,18 +1,19 @@
 package br.edu.unifei.ecot12.marinelife;
 
 public abstract class Profession {
-    private String descricao;
-    private float salario;
-    public String getDescricao() {
-        return descricao;
+    private String description;
+    private float salary;
+    public String getDescription() {
+        return description;
     }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
-    public float getSalario() {
-        return salario;
+    public float getSalary() {
+        return salary;
     }
-    public void setSalario(float salario) {
-        this.salario = salario;
+    public void setSalary(float salary) {
+        this.salary = salary;
     }
+
 }
