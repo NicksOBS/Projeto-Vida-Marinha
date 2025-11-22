@@ -11,6 +11,10 @@ public class Environment {
     private List<Vehicle> vehicles = new ArrayList<>();
     private List<Organism> organisms = new ArrayList<>();
 
+    public int entitiesQuantity(){
+        return organisms.size();
+    }
+
     public void removeOrganismFromEnvironment(Organism oragnism){
         organisms.remove(oragnism);
     }

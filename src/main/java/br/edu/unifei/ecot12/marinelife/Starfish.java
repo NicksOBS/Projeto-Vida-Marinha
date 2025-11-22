@@ -5,7 +5,8 @@ public class Starfish extends Herbivore implements Prototype<Starfish> {
 
     public Starfish clone(){
         Starfish sf = new Starfish();
-        getEnvironment().getOrganisms().add(sf);
+        sf = this;
+        this.getEnvironment().getOrganisms().add(sf);
         return sf;
     }
 
