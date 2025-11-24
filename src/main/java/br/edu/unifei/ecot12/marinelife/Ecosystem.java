@@ -61,6 +61,7 @@ public class Ecosystem {
     }
     
     public Vehicle createVehicle(Environment e, int type, int capacity, int vehicleConfig){
+        System.out.println("*****CREATING A SHARK******");
         switch (type) {
             case 1:
                 Boat v1 = new Boat();
