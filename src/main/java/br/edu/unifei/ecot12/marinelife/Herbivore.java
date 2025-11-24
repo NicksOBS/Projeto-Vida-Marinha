@@ -28,6 +28,7 @@ public abstract class Herbivore extends MarineAnimal {
 
     public void setResidence(Coral residence) {
         this.residence = residence;
+        residence.getResidents().add(this);
     }
 
     public void setFood(Seaweed food) {

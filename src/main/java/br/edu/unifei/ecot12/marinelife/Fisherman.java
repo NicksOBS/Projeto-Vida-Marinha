@@ -7,6 +7,11 @@ public class Fisherman extends Profession {
     private int numberOfFishCaught;
     private List<Herbivore> catches = new ArrayList<>();
 
+    public void toFish(Fish f){
+        f.getEnvironment().getOrganisms().remove(f);
+        numberOfFishCaught++;
+    }
+
     public int getNumberOfFishCaught() {
         return numberOfFishCaught;
     }

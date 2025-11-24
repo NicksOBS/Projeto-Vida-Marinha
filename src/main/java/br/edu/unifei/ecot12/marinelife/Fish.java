@@ -13,11 +13,15 @@ public class Fish extends Herbivore{
         this.weight = weight;
     }
 
-    public Fish breed(Fish breedingPartner){
-        if(breedingPartner.isGender() != this.isGender()){
+    public Fish breed(){
+        if(breedingPartner == null){
+            System.out.println("NO PARTNER FOUND");
+            return null;
+        }
+        else if(breedingPartner.isGender() != this.isGender()){
             getEnvironment().setOxygenLevel(getEnvironment().getOxygenLevel() - 0.05);
             System.out.println("THE BREED WAS A SUCCESS");
-            Fish fish = new Fish();
+            Fish fish = new Ecosystem().createFish(this.getEnvironment());
             getEnvironment().getOrganisms().add(fish);
             return fish;
         }
